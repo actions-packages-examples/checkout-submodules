@@ -20,17 +20,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
 
     steps:
-    # Checkout the private repo with token and inspect its contents
-    - uses: actions/checkout@v2
-      with:
-        repository: 'actions-packages-examples/this-is-private'
-        token: ${{ secrets.PAT }}
-    - run: ls
-
     # Checkout this repo with token, along with its private submodules
     - uses: actions/checkout@v2
       with:
         submodules: true
+        fetch-depth: 0
         token: ${{ secrets.PAT }}
 
     # Runs a single command using the runners shell
