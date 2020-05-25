@@ -26,3 +26,5 @@ jobs:
     - name: Check what was checked out
       run: |
         ls -lah .
+        ls -lah ./this-is-private
+        cat ./this-is-private/README.md
